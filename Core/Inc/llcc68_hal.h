@@ -95,10 +95,14 @@ void RF_TX_Init_and_Send(void);
 
 void RF_TX_Init(void);
 
-void RF_TX(uint8_t* tx_payload);
+void RF_TX_send(uint8_t* tx_payload);
 
 
 void RF_RX_Init_and_Receive(void);
+
+void RF_RX_Init(void);
+
+void RF_RX_receive(uint8_t* rx_buf);
 
 
 

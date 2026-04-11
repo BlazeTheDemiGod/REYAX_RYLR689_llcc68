@@ -321,7 +321,7 @@ void RF_TX_Init(void)
 }
 
 
-void RF_TX_send(uint8_t* tx_payload)
+void RF_TX_send(uint8_t* tx_payload, uint8_t tx_size)
 {  //May add logic to make sure module is in transmit mode before running this function
 	   /***************************Write bata to Tx/Rx Data Buffer***********************/
 	/*uint8_t TX_buf[] = //bytes to send to ground board
@@ -332,7 +332,7 @@ void RF_TX_send(uint8_t* tx_payload)
 				   0x22
 		   };*/
 	   //uint8_t TX_offset = 0;
-	   llcc68_write_buffer(0, 0, tx_payload, sizeof(tx_payload)); //moves the data into the buffer  (0, TX_offset, TX_buf, sizeof(TX_buf)
+	   llcc68_write_buffer(0, 0, tx_payload, tx_size); //moves the data into the buffer  (0, TX_offset, TX_buf, sizeof(TX_buf)
 	   llcc68_check_cmd_status();
 
 
